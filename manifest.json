@@ -1,6 +1,6 @@
 {
-  "name": "Copy Hex Colors",
-  "id": "copy-hex-colors",
+  "name": "Copy Spell",
+  "id": "copy-spell",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",

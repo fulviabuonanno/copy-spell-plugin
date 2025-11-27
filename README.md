@@ -1,60 +1,70 @@
-# Copy Hex Colors - Figma Plugin
+# ✨ Copy Spell
 
-Plugin de Figma para copiar rápidamente los valores hexadecimales de los colores de relleno (fills) de cualquier elemento.
+A magical incantation for capturing color essences from your Figma designs. Part of the **Design Tokens Wizards**.
 
-## Características
+## The Spell
 
-- 🎨 Extrae automáticamente todos los colores de relleno de los elementos seleccionados
-- 📋 Copia colores individuales con un solo clic
-- 📝 Copia todos los colores a la vez
-- 🔄 Se actualiza automáticamente al cambiar la selección
-- 🎯 Incluye colores de elementos hijos
-- ✨ Elimina duplicados automáticamente
+Cast the Copy Spell upon any element in your Figma canvas to reveal and capture its color essences in their purest hexadecimal form. This enchantment automatically seeks out all color magic within your selection, including nested components and child elements.
 
-## Instalación
+## Magical Properties
 
-1. Instala las dependencias:
+- 🔮 Automatically extracts all color essences from selected elements
+- 📜 Summon individual colors with a single incantation
+- ⚡ Capture all colors simultaneously
+- 🌟 Spell updates automatically when you shift your gaze
+- 🎯 Discovers colors hidden within child elements
+- ✨ Banishes duplicate color spirits
+
+## Summoning the Spell
+
+1. Gather the mystical dependencies:
+
 ```bash
 npm install
 ```
 
-2. Compila el código TypeScript:
+2. Compile the ancient TypeScript runes:
+
 ```bash
 npm run build
 ```
 
-3. En Figma Desktop:
-   - Ve a `Plugins` → `Development` → `Import plugin from manifest...`
-   - Selecciona el archivo `manifest.json` de este proyecto
+3. In the Figma Spell Chamber (Desktop):
+   - Navigate to `Plugins` → `Development` → `Import plugin from manifest...`
+   - Select the `manifest.json` scroll from this grimoire
 
-## Uso
+## Casting Instructions
 
-1. Abre el plugin desde `Plugins` → `Development` → `Copy Hex Colors`
-2. Selecciona uno o más elementos en tu canvas de Figma
-3. El plugin mostrará todos los colores de relleno encontrados
-4. Haz clic en cualquier color para copiarlo individualmente
-5. O usa el botón "Copy All Colors" para copiar todos los colores a la vez
+1. Invoke the spell from `Plugins` → `Development` → `Copy Spell`
+2. Select one or more elements on your Figma canvas
+3. The spell will reveal all color essences discovered
+4. Click any color to copy its hexadecimal essence to your spellbook (clipboard)
+5. Or use the "Copy All Colors" incantation to capture all at once
 
-## Desarrollo
+## Development Rituals
 
-Para trabajar en el plugin con recarga automática:
+To work on the spell with automatic recompilation:
 
 ```bash
 npm run watch
 ```
 
-Esto compilará automáticamente los cambios en `code.ts` mientras desarrollas.
+This enchantment will automatically recompile changes in `code.ts` as you craft new magic.
 
-## Estructura de archivos
+## Grimoire Structure
 
-- `manifest.json` - Configuración del plugin de Figma
-- `code.ts` - Código principal del plugin (lógica)
-- `ui.html` - Interfaz de usuario
-- `tsconfig.json` - Configuración de TypeScript
-- `package.json` - Dependencias y scripts
+- `manifest.json` - The spell's configuration scroll
+- `code.ts` - Core magical logic
+- `ui.html` - The spell's visual interface
+- `tsconfig.json` - TypeScript transmutation rules
+- `package.json` - Dependency artifacts and ritual commands
 
-## Notas
+## Design Tokens Wizards Realm
 
-- Solo extrae colores sólidos (SOLID fills)
-- Ignora fills invisibles o deshabilitados
-- Los colores se muestran en formato hexadecimal mayúsculas (#RRGGBB)
+This spell is part of the larger **Design Tokens Wizards Realm**, a collection of magical tools and enchantments for capturing, transforming, and managing design tokens across your creative domains.
+
+## Spell Limitations
+
+- Currently only captures solid color essences (SOLID fills)
+- Invisible or dormant color spirits are respectfully ignored
+- Colors manifest in uppercase hexadecimal format (#RRGGBB)

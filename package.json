@@ -1,7 +1,7 @@
 {
-  "name": "copy-hex-colors",
+  "name": "copy-spell",
   "version": "1.0.0",
-  "description": "Figma plugin to quickly copy hex color values from fills",
+  "description": "A magical Figma spell for capturing color essences from your designs",
   "main": "code.js",
   "scripts": {
     "build": "tsc",
