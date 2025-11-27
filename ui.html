@@ -9,12 +9,18 @@
       padding: 0;
     }
 
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 12px;
       padding: 16px;
-      background: #ffffff;
+      background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.85)),
+        center / contain no-repeat url('background.png'),
+        linear-gradient(135deg, #fff5f0 0%, #ffe8e8 100%);
       color: #333;
+      min-height: 100vh;
     }
 
     .header {
