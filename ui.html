@@ -185,23 +185,23 @@
 </head>
 <body>
   <div class="header">
-    <h2>Copy Hex Colors</h2>
-    <p id="selection-info">Select an element to see colors</p>
+    <h2>✨ Copy Spell</h2>
+    <p id="selection-info">Select an element to reveal its color essence</p>
   </div>
 
   <div id="empty-state" class="empty-state">
     <svg viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"/>
     </svg>
-    <p>Select elements with fill colors</p>
+    <p>Cast your spell upon elements with fill colors</p>
   </div>
 
   <div id="colors-container" style="display: none;">
     <div class="colors-list" id="colors-list"></div>
-    <button class="copy-all-btn" id="copy-all-btn">Copy All Colors</button>
+    <button class="copy-all-btn" id="copy-all-btn">⚡ Capture All Essences</button>
   </div>
 
-  <div class="copied-feedback" id="copied-feedback">Copied!</div>
+  <div class="copied-feedback" id="copied-feedback">Essence captured!</div>
 
   <script>
     let currentColors = [];
@@ -226,12 +226,12 @@
         emptyState.style.display = 'block';
         container.style.display = 'none';
         selectionInfo.textContent = selectionCount === 0
-          ? 'Select an element to see colors'
-          : `${selectionCount} element(s) selected - no fill colors found`;
+          ? 'Select an element to reveal its color essence'
+          : `${selectionCount} element(s) selected - no color essences detected`;
       } else {
         emptyState.style.display = 'none';
         container.style.display = 'block';
-        selectionInfo.textContent = `${colors.length} color(s) found in ${selectionCount} element(s)`;
+        selectionInfo.textContent = `${colors.length} essence(s) discovered in ${selectionCount} element(s)`;
 
         // Clear and rebuild colors list
         colorsList.innerHTML = '';
@@ -315,7 +315,7 @@
 
       copyToClipboard(text)
         .then(() => {
-          showCopiedFeedback(`${currentColors.length} colors`);
+          showCopiedFeedback(`${currentColors.length} essences`);
           parent.postMessage({
             pluginMessage: { type: 'copy-all', count: currentColors.length }
           }, '*');
@@ -359,7 +359,7 @@
 
     function showCopiedFeedback(text) {
       const feedback = document.getElementById('copied-feedback');
-      feedback.textContent = `Copied ${text}!`;
+      feedback.textContent = `✨ Captured ${text}!`;
       feedback.classList.add('show');
       setTimeout(() => {
         feedback.classList.remove('show');
