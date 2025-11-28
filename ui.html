@@ -30,16 +30,16 @@
     .sparkle-button {
         position: fixed;
         bottom: 16px;
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Center horizontally */
-        width: fit-content; /* Adjust width to content */
+        left: 16px;
+        right: 16px;
+        width: auto;
         appearance: none;
         background: #000000; /* Black background */
-        padding: 0.5rem 1rem; /* Smaller padding */
+        padding: 1rem 0; /* Vertical padding, horizontal handled by width */
         border: none;
         border-radius: 0; /* Square corners */
         color: white;
-        font-size: 0.75rem; /* Smaller font size */
+        font-size: 1rem;
         text-transform: uppercase;
         cursor: pointer;
         font-family: 'Press Start 2P', cursive;
@@ -50,7 +50,7 @@
             inset 4px 4px 0px 0px #666666,
             0 0 0 4px #0f172a,
             0 0 0 8px #fff;
-        transition: transform 0.1s steps(2), box-shadow 0.1s steps(2);
+        transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
         z-index: 100; /* Ensure it's on top */
         overflow: visible;
     }
@@ -82,8 +82,8 @@
         pointer-events: none;
         z-index: -1;
         fill: #fbbf24;
-        /* Use steps() for jerky, frame-by-frame animation */
-        animation-timing-function: steps(4, end);
+        /* Smooth animation */
+        animation-timing-function: ease-in-out;
     }
 
     /* 8-bit Animations 
@@ -150,7 +150,7 @@
     .star-static {
         position: absolute;
         fill: white;
-        animation: blink 0.8s steps(2, start) infinite;
+        animation: blink 0.8s ease-in-out infinite;
     }
     .star-1 { top: 15%; left: 8%; width: 8px; height: 8px; }
     .star-2 { bottom: 15%; right: 8%; width: 6px; height: 6px; animation-delay: 0.4s; }
@@ -492,7 +492,7 @@
       position: absolute;
       fill: #fbbf24; /* Gold color to match theme */
       opacity: 0.3;
-      animation: bg-blink 4s steps(2, start) infinite;
+      animation: bg-blink 4s ease-in-out infinite;
     }
     
     @keyframes bg-blink {
