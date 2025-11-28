@@ -28,18 +28,18 @@
 
     /* 8-Bit Button Styling */
     .sparkle-button {
-        position: fixed; /* Changed to fixed */
-        bottom: 16px; /* Stick to bottom */
-        left: 16px; /* Full width with padding */
-        right: 16px; /* Full width with padding */
-        width: auto; /* Allow fixed positioning to control width */
+        position: fixed;
+        bottom: 16px;
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+        width: fit-content; /* Adjust width to content */
         appearance: none;
         background: #000000; /* Black background */
-        padding: 1rem 2rem; /* Increased side padding for balance without icon */
+        padding: 0.5rem 1rem; /* Smaller padding */
         border: none;
         border-radius: 0; /* Square corners */
         color: white;
-        font-size: 1rem;
+        font-size: 0.75rem; /* Smaller font size */
         text-transform: uppercase;
         cursor: pointer;
         font-family: 'Press Start 2P', cursive;
