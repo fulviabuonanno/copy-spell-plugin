@@ -16,32 +16,155 @@
       font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
       font-size: 12px;
       padding: 16px;
-      background:
-        url('background.png') center / cover no-repeat,
-        linear-gradient(135deg, #fff5f0 0%, #ffe8e8 100%);
-      color: #333;
+      background: #f5f5f5;
+      color: #000;
       min-height: 100vh;
+      height: 100%;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .header {
+      font-size: 20px;
       margin-bottom: 16px;
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
-    .header h2 {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
+    .header-content {
+      flex: 1;
+      text-align: center;
     }
+
+    .info-button {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #EEB52C;
+      border: 1.5px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      margin-left: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .info-button:hover {
+      background: rgba(255, 255, 255, 1);
+      border-color: rgba(0, 0, 0, 0.2);
+      transform: scale(1.1);
+    }
+
+    .info-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .info-modal.show {
+      display: flex;
+    }
+
+    .info-content {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 280px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-content h3 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .info-content p {
+      margin: 0 0 12px 0;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .info-content a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .info-content a:hover {
+      text-decoration: underline;
+    }
+
+    .close-modal {
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .close-modal:hover {
+      background: #333;
+    }
+
+            .header h2 {
+
+              font-size: 16px;
+
+              font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+              font-weight: 600;
+
+              margin-bottom: 4px;
+
+              display: flex;
+
+              align-items: center;
+
+              justify-content: center;
+
+              flex-direction: column;
+
+            }
 
     .header p {
-      font-size: 11px;
-      color: #999;
+      font-size: 12px;
+      color: #000;
     }
 
     .empty-state {
       text-align: center;
       padding: 40px 20px;
-      color: #999;
+      color: #000;
+      position: relative;
+      z-index: 1;
     }
 
     .empty-state svg {
@@ -55,30 +178,42 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      position: relative;
+      z-index: 1;
+      padding-bottom: 80px;
+      width: 100%;
+      max-width: 100%;
     }
 
     .color-item {
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
       display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 8px;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s;
+      position: relative;
+      padding-top: 28px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .color-item:hover {
-      border-color: #0066ff;
+      border-color: #EEE;
       background: #f7f9fc;
     }
 
     .color-swatch {
-      width: 32px;
-      height: 32px;
+      width: 100%;
+      height: 40px;
       border-radius: 4px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      border: 2px solid rgba(0, 0, 0, 0.1);
       flex-shrink: 0;
+      margin-top: 4px;
     }
 
     .color-info {
@@ -88,18 +223,36 @@
       gap: 2px;
     }
 
+    .color-hex-label {
+      font-size: 9px;
+      color: #666;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
     .color-hex {
       font-family: 'Monaco', 'Menlo', monospace;
-      font-size: 13px;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .color-name-label {
+      font-size: 9px;
+      color: #666;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.5px;
     }
 
     .color-name {
       font-size: 11px;
-      color: #666;
+      color: #000;
       display: flex;
       align-items: flex-start;
-      gap: 4px;
+      gap: 8px;
       word-break: break-word;
       overflow-wrap: break-word;
       flex-wrap: wrap;
@@ -113,8 +266,8 @@
 
     .color-badge {
       display: inline-block;
-      padding: 2px 6px;
-      border-radius: 3px;
+      padding: 4px 8px;
+      border-radius: 8px 0 4px 0;
       font-size: 9px;
       font-weight: 600;
       text-transform: uppercase;
@@ -123,49 +276,77 @@
     .color-badge.variable {
       background: #e3f2fd;
       color: #1976d2;
+      border-radius: 0px 0px 4px; 
     }
 
     .color-badge.style {
       background: #f3e5f5;
       color: #7b1fa2;
+      border-radius: 0px 0px 4px; 
+    }
+
+    .color-badge.raw {
+      background: #e0e0e0; /* Light gray */
+      color: #424242; /* Darker gray text */
+      border-radius: 0px 0px 4px; /* Match main container's border-radius */
+    }
+
+    .badge-container {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .copy-icon {
-      width: 16px;
-      height: 16px;
-      opacity: 0.5;
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
       flex-shrink: 0;
+      transition: all 0.2s;
+      padding: 4px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
     }
 
     .color-item:hover .copy-icon {
       opacity: 1;
+      background: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
     }
 
     .copy-all-btn {
-      width: 100%;
-      padding: 10px;
-      margin-top: 16px;
-      background: #0066ff;
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      padding: 8px 16px;
+      background: #000;
       color: white;
       border: none;
       border-radius: 6px;
-      font-size: 12px;
-      font-weight: 500;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: all 0.2s;
+      z-index: 100;
+      opacity: 0.9;
     }
 
     .copy-all-btn:hover {
-      background: #0052cc;
+      background: #333;
+      opacity: 1;
     }
 
     .copy-all-btn:active {
-      background: #003d99;
+      background: #555;
     }
 
     .copy-all-btn:disabled {
-      background: #e0e0e0;
-      color: #999;
+      background: #999;
       cursor: not-allowed;
     }
 
@@ -178,30 +359,137 @@
       color: white;
       padding: 8px 16px;
       border-radius: 6px;
-      font-size: 11px;
+      font-size: 10px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.2s;
+      transition: opacity 0.4s;
+      border-radius: 4;
+      z-index: 2000;
     }
 
     .copied-feedback.show {
       opacity: 0.9;
     }
 
-    .footer {
-      margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid #e0e0e0;
-      text-align: center;
-      font-size: 10px;
-      color: #999;
-    }
   </style>
 </head>
 <body>
   <div class="header">
-    <h2>✨ Copy Spell</h2>
-    <p id="selection-info">Select an element to reveal its color essence</p>
+    <div class="header-content">
+      <h2>
+        <svg width="120px" height="80px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" style="horizontal-align:center; margin-bottom: 4px; padding-left:20px;">
+    <style>
+        /* Animations embedded directly in the SVG */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-1px); }
+        }
+        @keyframes bubble-rise {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-4px); opacity: 0; }
+        }
+        @keyframes fire-flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        .sparkle-1 { animation: twinkle 1.5s infinite; }
+        .sparkle-2 { animation: twinkle 2s infinite 0.5s; }
+        .sparkle-3 { animation: twinkle 1.8s infinite 0.2s; }
+        .bubble-1 { animation: bubble-rise 2s infinite linear; }
+        .bubble-2 { animation: bubble-rise 2.5s infinite linear 1s; }
+        .fire-anim { animation: fire-flicker 0.2s infinite alternate; }
+    </style>
+
+    <!-- Fire (Bottom) -->
+    <g class="fire-anim">
+        <path fill="#e63946" d="
+            M8 20 h1 v1 h-1 z
+            M10 20 h1 v1 h-1 z
+            M13 20 h1 v1 h-1 z
+            M15 20 h1 v1 h-1 z
+            M9 21 h6 v1 h-6 z
+            M7 21 h1 v1 h-1 z
+            M16 21 h1 v1 h-1 z
+        "/>
+        <path fill="#fca311" d="
+            M9 20 h1 v1 h-1 z
+            M11 20 h2 v1 h-2 z
+            M14 20 h1 v1 h-1 z
+            M10 21 h4 v1 h-4 z
+        "/>
+    </g>
+
+    <!-- Cauldron Feet (Dark Grey) -->
+    <path fill="#2b2d42" d="
+        M7 19 h2 v1 h-2 z
+        M15 19 h2 v1 h-2 z
+    "/>
+
+    <!-- Cauldron Body Main (Gold/Yellow) -->
+    <path fill="#DAA520" d="
+        M6 11 h12 v7 h-12 z
+        M5 11 h1 v6 h-1 z
+        M18 11 h1 v6 h-1 z
+        M6 18 h12 v1 h-12 z
+    "/>
+
+    <!-- Cauldron Rim (Bright Yellow) -->
+    <path fill="#FFD700" d="
+        M5 10 h14 v1 h-14 z
+        M4 10 h1 v1 h-1 z
+        M19 10 h1 v1 h-1 z
+    "/>
+    
+    <!-- Cauldron Highlight/Shading (Darker Gold) -->
+    <path fill="#B8860B" d="
+        M7 12 h2 v1 h-2 z
+        M7 14 h1 v1 h-1 z
+    "/>
+    
+    <!-- Potion Surface (Cyan/Blue) -->
+    <path fill="#4cc9f0" d="
+        M6 10 h12 v1 h-12 z
+    "/>
+    
+    <!-- Bubbles (Purple) -->
+    <rect class="bubble-1" x="9" y="8" width="1" height="1" fill="#7209b7" />
+    <rect class="bubble-2" x="14" y="7" width="1" height="1" fill="#7209b7" />
+    <rect x="11" y="10" width="2" height="1" fill="#7209b7" />
+    <rect x="15" y="10" width="1" height="1" fill="#7209b7" />
+
+    <!-- Sparkles (Pink/White) -->
+    <g fill="#f72585">
+        <g class="sparkle-1">
+            <rect x="5" y="4" width="1" height="1" />
+            <rect x="4" y="5" width="3" height="1" />
+            <rect x="5" y="6" width="1" height="1" />
+            <rect x="5" y="5" width="1" height="1" fill="#fff" />
+        </g>
+        <g class="sparkle-2">
+            <rect x="18" y="3" width="1" height="1" />
+        </g>
+        <g class="sparkle-3">
+            <rect x="12" y="2" width="1" height="1" />
+            <rect x="11" y="3" width="3" height="1" />
+            <rect x="12" y="4" width="1" height="1" />
+        </g>
+    </g>
+</svg>
+        <span>✨ Copy Spell</span>
+      </h2>
+      <p id="selection-info">Select an element to reveal its color values</p>
+    </div>
+    <div class="info-button" id="info-button">i</div>
+  </div>
+
+  <div class="info-modal" id="info-modal">
+    <div class="info-content">
+      <h3>About Copy Spell</h3>
+      <p>Brought to you by <a href="https://www.designtokenswizards.com" target="_blank">Design Tokens Wizards</a>, Copy Spell is a magical utility designed to streamline your design token workflow.</p>
+      <p>Instantly identify and copy color values from selected elements. This spell captures hex codes from Figma styles, variables, and regular fills, ensuring consistency within your design system.</p>
+      <button class="close-modal" id="close-modal">Close</button>
+    </div>
   </div>
 
   <div id="empty-state" class="empty-state">
@@ -213,14 +501,10 @@
 
   <div id="colors-container" style="display: none;">
     <div class="colors-list" id="colors-list"></div>
-    <button class="copy-all-btn" id="copy-all-btn">⚡ Capture All Essences</button>
+    <button class="copy-all-btn" id="copy-all-btn">⚡ Cast Copy Spell</button>
   </div>
 
-  <div class="copied-feedback" id="copied-feedback">Essence captured!</div>
-
-  <div class="footer">
-    made with ✨ in Barcelona
-  </div>
+  <div class="copied-feedback" id="copied-feedback">Values captured!</div>
 
   <script>
     let currentColors = [];
@@ -236,6 +520,7 @@
     };
 
     function updateUI(colors, selectionCount) {
+      totalSelectedElementsCount = selectionCount;
       const emptyState = document.getElementById('empty-state');
       const container = document.getElementById('colors-container');
       const selectionInfo = document.getElementById('selection-info');
@@ -245,12 +530,12 @@
         emptyState.style.display = 'block';
         container.style.display = 'none';
         selectionInfo.textContent = selectionCount === 0
-          ? 'Select an element to reveal its color essence'
-          : `${selectionCount} element(s) selected - no color essences detected`;
+          ? 'Select an element to reveal its color magic'
+          : `${selectionCount} element(s) selected - no color magic detected`;
       } else {
         emptyState.style.display = 'none';
         container.style.display = 'block';
-        selectionInfo.textContent = `${colors.length} essence(s) discovered in ${selectionCount} element(s)`;
+        selectionInfo.textContent = `${colors.length} color(s) discovered in ${selectionCount} element(s)`;
 
         // Clear and rebuild colors list
         colorsList.innerHTML = '';
@@ -265,40 +550,70 @@
       const item = document.createElement('div');
       item.className = 'color-item';
 
-      const textToCopy = colorData.name ? `${colorData.hex}, ${colorData.name}` : colorData.hex;
+      // Copy only the value (hex or CSS string) to ensure it's valid code
+      const textToCopy = colorData.hex;
       item.onclick = () => copyColor(textToCopy, colorData.hex);
-
-      const swatch = document.createElement('div');
-      swatch.className = 'color-swatch';
-      swatch.style.background = colorData.hex;
 
       const colorInfo = document.createElement('div');
       colorInfo.className = 'color-info';
 
+      // Add badge on top if available (style, variable, or raw)
+      if (colorData.type || (!colorData.name && !colorData.isGradient)) { // Check for raw color if no name and not a gradient
+        const badgeContainer = document.createElement('div');
+        badgeContainer.className = 'badge-container';
+        const badge = document.createElement('span');
+        
+        if (colorData.type) {
+            badge.className = `color-badge ${colorData.type}`;
+            badge.textContent = colorData.type;
+        } else if (!colorData.name) { // It's a raw color if no type and no name
+            badge.className = `color-badge raw`;
+            badge.textContent = 'raw color';
+        }
+        
+        badgeContainer.appendChild(badge);
+        colorInfo.appendChild(badgeContainer);
+      }
+
+      const hexLabel = document.createElement('div');
+      hexLabel.className = 'color-hex-label';
+      hexLabel.textContent = colorData.isGradient ? 'CSS Value' : 'Hex Code';
+      colorInfo.appendChild(hexLabel);
+
       const hexText = document.createElement('div');
       hexText.className = 'color-hex';
       hexText.textContent = colorData.hex;
-
+      
+      if (colorData.isGradient) {
+        hexText.style.fontSize = '11px';
+        hexText.style.fontWeight = '400';
+        hexText.style.whiteSpace = 'normal';
+        hexText.style.wordBreak = 'break-all';
+        hexText.style.lineHeight = '1.4';
+      }
+      
       colorInfo.appendChild(hexText);
 
-      // Add name and badge if available
+      // Add color name section if available
       if (colorData.name) {
+        const nameLabel = document.createElement('div');
+        nameLabel.className = 'color-name-label';
+        nameLabel.textContent = 'Color Name';
+        colorInfo.appendChild(nameLabel);
+
         const nameContainer = document.createElement('div');
         nameContainer.className = 'color-name';
-
-        if (colorData.type) {
-          const badge = document.createElement('span');
-          badge.className = `color-badge ${colorData.type}`;
-          badge.textContent = colorData.type;
-          nameContainer.appendChild(badge);
-        }
-
         const nameText = document.createElement('span');
         nameText.textContent = colorData.name;
         nameContainer.appendChild(nameText);
-
         colorInfo.appendChild(nameContainer);
       }
+
+      // Color swatch below the color name
+      const swatch = document.createElement('div');
+      swatch.className = 'color-swatch';
+      swatch.style.background = colorData.hex;
+      colorInfo.appendChild(swatch);
 
       const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       icon.setAttribute('class', 'copy-icon');
@@ -306,7 +621,6 @@
       icon.setAttribute('fill', 'currentColor');
       icon.innerHTML = '<path d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/>';
 
-      item.appendChild(swatch);
       item.appendChild(colorInfo);
       item.appendChild(icon);
 
@@ -316,8 +630,8 @@
     function copyColor(text, displayText) {
       copyToClipboard(text)
         .then(() => {
-          showCopiedFeedback(displayText || text);
-          parent.postMessage({ pluginMessage: { type: 'copy-color', color: displayText || text } }, '*');
+          showCopiedFeedback(`Casted ${displayText || text}`);
+          // parent.postMessage({ pluginMessage: { type: 'copy-color', color: displayText || text } }, '*');
         })
         .catch((err) => {
           console.error('Failed to copy:', err);
@@ -334,10 +648,10 @@
 
       copyToClipboard(text)
         .then(() => {
-          showCopiedFeedback(`${currentColors.length} essences`);
-          parent.postMessage({
-            pluginMessage: { type: 'copy-all', count: currentColors.length }
-          }, '*');
+          showCopiedFeedback(`Copied ${currentColors.length} colors!`);
+          // parent.postMessage({
+          //   pluginMessage: { type: 'copy-all', count: currentColors.length }
+          // }, '*');
         })
         .catch((err) => {
           console.error('Failed to copy:', err);
@@ -378,7 +692,7 @@
 
     function showCopiedFeedback(text) {
       const feedback = document.getElementById('copied-feedback');
-      feedback.textContent = `✨ Captured ${text}!`;
+      feedback.textContent = `✨ ${text}!`;
       feedback.classList.add('show');
       setTimeout(() => {
         feedback.classList.remove('show');
@@ -387,6 +701,25 @@
 
     // Setup copy all button
     document.getElementById('copy-all-btn').onclick = copyAllColors;
+
+    // Setup info modal
+    const infoButton = document.getElementById('info-button');
+    const infoModal = document.getElementById('info-modal');
+    const closeModal = document.getElementById('close-modal');
+
+    infoButton.onclick = () => {
+      infoModal.classList.add('show');
+    };
+
+    closeModal.onclick = () => {
+      infoModal.classList.remove('show');
+    };
+
+    infoModal.onclick = (e) => {
+      if (e.target === infoModal) {
+        infoModal.classList.remove('show');
+      }
+    };
 
     // Request initial colors
     parent.postMessage({ pluginMessage: { type: 'get-colors' } }, '*');
