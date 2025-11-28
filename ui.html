@@ -28,7 +28,11 @@
 
     /* 8-Bit Button Styling */
     .sparkle-button {
-        position: relative;
+        position: fixed; /* Changed to fixed */
+        bottom: 16px; /* Stick to bottom */
+        left: 16px; /* Full width with padding */
+        right: 16px; /* Full width with padding */
+        width: auto; /* Allow fixed positioning to control width */
         appearance: none;
         background: #000000; /* Black background */
         padding: 1rem 2rem; /* Increased side padding for balance without icon */
@@ -47,7 +51,7 @@
             0 0 0 4px #0f172a,
             0 0 0 8px #fff;
         transition: transform 0.1s steps(2), box-shadow 0.1s steps(2);
-        z-index: 1;
+        z-index: 100; /* Ensure it's on top */
         overflow: visible;
     }
 
