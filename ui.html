@@ -729,7 +729,7 @@ font-size: 6px;
 </svg>
         <span>Copy Spell</span>
       </h2>
-      <p id="selection-info">Select an element to reveal its color values</p>
+      <p id="selection-info">Choose an element to discover its colors</p>
     </div>
     <div class="info-button" id="info-button">i</div>
   </div>
@@ -740,8 +740,8 @@ font-size: 6px;
         <h3>About Copy Spell</h3>
         <span class="version-tag">v1.0.0</span>
       </div>
-      <p>Brought to you by Fulvia Buonanno, a Design Systems Designer based in Barcelona and the sorcerer behind <a href="https://www.designtokenswizards.com" target="_blank">Design Tokens Wizards</a>, a toolkit to automate and facilitate the creation of design systems foundations. Copy Spell is a magical utility designed to streamline your design token workflow, making easy to inspect the elements at one hand and copy to reuse in documentation and to work with.</p>
-      <p>Instantly identify and copy color values from selected elements. This spell captures hex codes from Figma styles, variables, and regular fills, ensuring consistency within your design system.</p>
+      <p>Copy Spell helps you quickly extract and copy color values from Figma elements. Created by Fulvia Buonanno, a Design Systems Designer and creator of <a href="https://www.designtokenswizards.com" target="_blank">Design Tokens Wizards</a>.</p>
+      <p>Instantly identify hex codes, CSS values, and color tokens from styles, variables, and fills—perfect for design system workflows.</p>
       <button class="close-modal" id="close-modal">Close</button>
     </div>
   </div>
@@ -842,14 +842,14 @@ font-size: 6px;
         </g>
     </g>
 </svg>
-    <p>Cast your spell upon elements with fill colors</p>
+    <p>Select elements with fill colors to begin</p>
   </div>
 
   <div id="colors-container" style="display: none;">
     <div class="colors-list" id="colors-list"></div>
     <button class="sparkle-button" id="sparkle-button">
         <div class="text">
-            Cast Copy Spell
+            Copy All Colors
         </div>
 
         <!-- Pixel Art Sparkles (Reverted to classic cross/star shapes) -->
@@ -949,7 +949,7 @@ font-size: 6px;
             badge.textContent = colorData.type;
         } else if (!colorData.name) { // It's a raw color if no type and no name
             badge.className = `color-badge raw`;
-            badge.textContent = 'raw color';
+            badge.textContent = 'fill';
         }
 
         badgeContainer.appendChild(badge);
@@ -1011,7 +1011,7 @@ font-size: 6px;
     function copyColor(text, displayText) {
       copyToClipboard(text)
         .then(() => {
-          showCopiedFeedback(`Casted ${displayText || text}`);
+          showCopiedFeedback(`Copied ${displayText || text}`);
           // parent.postMessage({ pluginMessage: { type: 'copy-color', color: displayText || text } }, '*');
         })
         .catch((err) => {
